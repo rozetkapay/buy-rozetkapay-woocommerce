@@ -5,6 +5,10 @@
  * @package RozetkaPay Gateway
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 /**
  * Class of order payment actions for admin side.
  */

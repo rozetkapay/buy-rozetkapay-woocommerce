@@ -15,6 +15,10 @@
  * @var bool $show_cancel_payment
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( $show_payment_info ) {
 	?>
 		<a href="<?php echo esc_url( $payment_info_url ); ?>" class="button button-primary" style="margin-top: 8px;">

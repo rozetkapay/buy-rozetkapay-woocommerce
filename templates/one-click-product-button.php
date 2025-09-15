@@ -7,6 +7,10 @@
  * @var string $view_mode
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 global $product;
 
 if ( 'white' === $view_mode ) {

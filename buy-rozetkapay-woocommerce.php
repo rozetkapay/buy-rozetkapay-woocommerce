@@ -11,6 +11,7 @@
  * Requires PHP: 7.3
  * Requires at least: 6.2
  * Tested up to: 6.8
+ * Requires Plugins: woocommerce
  * WC requires at least: 8.0
  * WC tested up to: 9.8
  *

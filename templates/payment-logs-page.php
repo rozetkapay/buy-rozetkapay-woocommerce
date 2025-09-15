@@ -8,6 +8,10 @@
  * @var array $logs
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 ?>
 <div class="wrap">
 	<h1><?php esc_html_e( 'RozetkaPay Logs', 'buy-rozetkapay-woocommerce' ); ?></h1>

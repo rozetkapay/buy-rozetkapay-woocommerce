@@ -7,6 +7,10 @@
  * @var WC_Order $order
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 if ( $order ) {
 	$payment_operation_type =
 		get_post_meta( $order->get_id(), RozetkaPay_Const::PAYMENT_OPERATION_TYPE_OPTION_KEY, true );
