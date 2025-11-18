@@ -1,0 +1,320 @@
+/* RozetkaPay Payparts Mobile Styles */
+
+/* Додаткові мобільні оптимізації */
+@media (max-width: 480px) {
+    .rp-payparts-container {
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 8px;
+    }
+    
+    .rp-payparts-header {
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .rp-payparts-header h4 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    
+    .rp-payparts-icon {
+        font-size: 20px;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .rp-payparts-option {
+        padding: 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .rp-option-header {
+        margin-bottom: 6px;
+    }
+    
+    .rp-bank-name {
+        font-size: 14px;
+    }
+    
+    .rp-term-badge {
+        padding: 3px 8px;
+        font-size: 11px;
+        margin-top: 4px;
+        align-self: flex-start;
+    }
+    
+    .rp-option-details {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    
+    .rp-option-details strong {
+        font-size: 14px;
+    }
+    
+    .rp-option-check {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        margin-left: 0;
+    }
+    
+    .rp-payparts-info {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .rp-info-item {
+        font-size: 13px;
+        padding: 4px 0;
+    }
+    
+    .rp-info-icon {
+        font-size: 14px;
+        margin-right: 6px;
+        flex-shrink: 0;
+    }
+}
+
+/* Дуже маленькі екрани */
+@media (max-width: 360px) {
+    .rp-payparts-container {
+        padding: 10px;
+        margin: 5px 0;
+    }
+    
+    .rp-payparts-header h4 {
+        font-size: 13px;
+    }
+    
+    .rp-payparts-option {
+        padding: 8px;
+    }
+    
+    .rp-bank-name {
+        font-size: 13px;
+    }
+    
+    .rp-term-badge {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .rp-option-details {
+        font-size: 12px;
+    }
+    
+    .rp-option-details strong {
+        font-size: 13px;
+    }
+    
+    .rp-payparts-info {
+        padding: 10px;
+    }
+    
+    .rp-info-item {
+        font-size: 12px;
+    }
+}
+
+/* Режим landscape на мобільних */
+@media (max-width: 768px) and (orientation: landscape) {
+    .rp-payparts-container {
+        padding: 15px;
+    }
+    
+    .rp-payparts-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+    }
+    
+    .rp-payparts-option {
+        padding: 12px;
+    }
+    
+    .rp-payparts-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Планшети в портретній орієнтації */
+@media (min-width: 481px) and (max-width: 768px) {
+    .rp-payparts-container {
+        padding: 18px;
+    }
+    
+    .rp-payparts-options {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .rp-payparts-option {
+        padding: 14px;
+    }
+    
+    .rp-option-header {
+        gap: 6px;
+    }
+    
+    .rp-payparts-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+/* Покращена читабельність на мобільних */
+@media (max-width: 768px) {
+    .rp-payparts-container {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* Збільшуємо області торкання */
+    .rp-payparts-option {
+        min-height: 60px;
+        touch-action: manipulation;
+    }
+    
+    .rp-payparts-option:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Покращуємо контрастність для мобільних */
+    .rp-bank-name {
+        color: #0f172a;
+        font-weight: 700;
+    }
+    
+    .rp-option-details strong {
+        color: #047857;
+        font-weight: 700;
+    }
+    
+    /* Оптимізація для темної теми */
+    @media (prefers-color-scheme: dark) {
+        .rp-payparts-container {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-color: #475569;
+            color: #f1f5f9;
+        }
+        
+        .rp-payparts-option {
+            background: #0f172a;
+            border-color: #334155;
+            color: #f1f5f9;
+        }
+        
+        .rp-payparts-option:hover {
+            border-color: #60a5fa;
+            background: #1e293b;
+        }
+        
+        .rp-payparts-option:has(input:checked) {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            border-color: #60a5fa;
+        }
+        
+        .rp-bank-name {
+            color: #f1f5f9;
+        }
+        
+        .rp-option-details {
+            color: #94a3b8;
+        }
+        
+        .rp-option-details strong {
+            color: #34d399;
+        }
+        
+        .rp-payparts-info {
+            background: rgba(15, 23, 42, 0.7);
+            border-color: #334155;
+        }
+        
+        .rp-info-item {
+            color: #94a3b8;
+        }
+    }
+}
+
+/* Висока щільність пікселів */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .rp-payparts-option {
+        border-width: 1.5px;
+    }
+    
+    .rp-term-badge {
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .rp-option-check {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Анімації, оптимізовані для мобільних */
+@media (max-width: 768px) {
+    .rp-payparts-container {
+        animation: rp-mobileSlideUp 0.4s ease-out;
+    }
+    
+    .rp-payparts-option {
+        transition: all 0.2s ease, transform 0.1s ease;
+    }
+    
+    .rp-payparts-option:hover {
+        transform: translateY(-0.5px);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+    }
+    
+    @keyframes rp-mobileSlideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Доступність для мобільних пристроїв */
+@media (max-width: 768px) {
+    .rp-payparts-option:focus-within {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+    }
+    
+    .rp-payparts-option input[type="radio"]:focus {
+        outline: none;
+    }
+    
+    /* Збільшуємо розмір тексту для кращої читабельності */
+    .rp-calc-note {
+        font-size: 13px;
+    }
+    
+    /* Оптимізація повідомлень */
+    .rp-payparts-warning,
+    .rp-payparts-test-mode,
+    .rp-payparts-checkout-message {
+        padding: 12px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .rp-payparts-cart-message {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}

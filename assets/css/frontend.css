@@ -1,0 +1,425 @@
+/* RozetkaPay Payparts Frontend Styles */
+
+/* Повідомлення в кошику */
+.woocommerce-info.rp-payparts-cart-message {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+    border-left: 4px solid #0ea5e9 !important;
+}
+
+/* Додаткове повідомлення на сторінці checkout */
+.rp-payparts-checkout-message {
+    background: #e8f4fd;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    border-left: 4px solid #0ea5e9;
+}
+
+/* Повідомлення статусу */
+.rp-payparts-warning {
+    padding: 15px;
+    background: #fef3c7;
+    border-radius: 8px;
+    margin: 10px 0;
+    border-left: 4px solid #f59e0b;
+}
+
+.rp-payparts-test-mode {
+    padding: 10px;
+    background: #e0f2fe;
+    border-radius: 6px;
+    margin: 10px 0;
+    border-left: 4px solid #0ea5e9;
+}
+
+.rp-payparts-test-mode p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Основний контейнер – тільки для payment gateway */
+.payment_method_rp_payparts .rp-payparts-container {
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    font-family: inherit;
+    animation: rp-fadeIn 0.3s ease-out;
+}
+
+/* Заголовок */
+.payment_method_rp_payparts .rp-payparts-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.payment_method_rp_payparts .rp-payparts-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.payment_method_rp_payparts .rp-payparts-header h4 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Опції оплати */
+.payment_method_rp_payparts .rp-payparts-options {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.payment_method_rp_payparts .rp-payparts-option {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    margin: 0;
+}
+
+.payment_method_rp_payparts .rp-payparts-option:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-1px);
+}
+
+.payment_method_rp_payparts .rp-payparts-option input[type="radio"] {
+    display: none;
+}
+
+.payment_method_rp_payparts .rp-payparts-option input[type="radio"]:checked + .rp-option-content {
+    color: #1e40af;
+}
+
+.payment_method_rp_payparts .rp-payparts-option input[type="radio"]:checked ~ .rp-option-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.payment_method_rp_payparts .rp-payparts-option:has(input:checked) {
+    border-color: #3b82f6;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Fallback для браузерів без підтримки :has() */
+.payment_method_rp_payparts .rp-payparts-option.selected {
+    border-color: #3b82f6;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.payment_method_rp_payparts .rp-payparts-option.selected .rp-option-content {
+    color: #1e40af;
+}
+
+.payment_method_rp_payparts .rp-payparts-option.selected .rp-option-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Вміст опції */
+.payment_method_rp_payparts .rp-option-content {
+    flex: 1;
+    transition: color 0.2s ease;
+}
+
+.payment_method_rp_payparts .rp-option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.payment_method_rp_payparts .rp-bank-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1e293b;
+}
+
+.payment_method_rp_payparts .rp-term-badge {
+    background: #3b82f6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.payment_method_rp_payparts .rp-option-details {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.payment_method_rp_payparts .rp-option-details strong {
+    color: #059669;
+    font-size: 16px;
+}
+
+.payment_method_rp_payparts .rp-calc-note {
+    font-style: italic;
+    color: #9ca3af;
+}
+
+/* Чекбокс */
+.payment_method_rp_payparts .rp-option-check {
+    width: 24px;
+    height: 24px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.2s ease;
+    margin-left: 15px;
+}
+
+/* Інформаційний блок */
+.payment_method_rp_payparts .rp-payparts-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.payment_method_rp_payparts .rp-info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.payment_method_rp_payparts .rp-info-icon {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Анімації */
+@keyframes rp-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 768px) {
+    .payment_method_rp_payparts .rp-payparts-container {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    
+    .payment_method_rp_payparts .rp-payparts-header h4 {
+        font-size: 16px;
+    }
+    
+    .payment_method_rp_payparts .rp-payparts-option {
+        padding: 12px;
+    }
+    
+    .payment_method_rp_payparts .rp-option-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .payment_method_rp_payparts .rp-payparts-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Підтримка браузерів без :has() */
+@supports not selector(:has(*)) {
+    .payment_method_rp_payparts .rp-payparts-option input[type="radio"]:checked {
+        /* Fallback стилі для старих браузерів */
+    }
+}
+
+/* Віджет розстрочки на сторінках продуктів – окремі стилі */
+.rozetkapay-payparts-widget {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    font-family: inherit;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+}
+
+.rozetkapay-widget-logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rozetkapay-logo {
+    height: 20px;
+    width: auto;
+}
+
+.rozetkapay-widget-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.rozetkapay-widget-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.rozetkapay-widget-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    min-width: 80px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.rozetkapay-widget-option:hover {
+    border-color: #3b82f6;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+}
+
+.rozetkapay-payment {
+    font-weight: 700;
+    color: #059669;
+    font-size: 13px;
+}
+
+.rozetkapay-term {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.rozetkapay-bank {
+    font-size: 10px;
+    color: #94a3b8;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rozetkapay-widget-best {
+    text-align: center;
+    font-size: 14px;
+    color: #374151;
+}
+
+.rozetkapay-widget-best strong {
+    color: #059669;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Компактний стиль для віджета */
+.rozetkapay-style-compact {
+    padding: 10px;
+    margin: 10px 0;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+.rozetkapay-style-compact .rozetkapay-widget-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.rozetkapay-style-compact .rozetkapay-widget-option {
+    padding: 6px 8px;
+    min-width: 60px;
+}
+
+.rozetkapay-style-compact .rozetkapay-payment {
+    font-size: 12px;
+}
+
+.rozetkapay-style-compact .rozetkapay-term {
+    font-size: 10px;
+}
+
+.rozetkapay-style-compact .rozetkapay-bank {
+    display: none;
+}
+
+/* Переконуємось, що віджет не впливає на основні елементи WooCommerce */
+.rozetkapay-payparts-widget * {
+    box-sizing: border-box;
+}
+
+/* Специфічність для віджета на сторінці продукту */
+.single-product .rozetkapay-payparts-widget {
+    max-width: 100%;
+    margin: 10px 0 20px 0;
+}
+
+/* Виправляємо потенційні конфлікти з кнопками */
+.rozetkapay-payparts-widget .button,
+.rozetkapay-payparts-widget .btn {
+    all: unset;
+    display: inline-block;
+    padding: 8px 16px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.rozetkapay-payparts-widget .button:hover,
+.rozetkapay-payparts-widget .btn:hover {
+    background: #1d4ed8;
+}
+
+/* Додаткові утиліти */
+.rp-text-center { text-align: center; }
+.rp-text-left { text-align: left; }
+.rp-text-right { text-align: right; }
+
+.rp-mb-10 { margin-bottom: 10px; }
+.rp-mb-15 { margin-bottom: 15px; }
+.rp-mb-20 { margin-bottom: 20px; }
+
+.rp-p-10 { padding: 10px; }
+.rp-p-15 { padding: 15px; }
+.rp-p-20 { padding: 20px; }

@@ -1,0 +1,768 @@
+/* RozetkaPay Payparts Admin Styles */
+
+/* Основні стилі для сторінки налаштувань */
+.rp-payparts-admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Інформаційний блок в адмінці */
+.rp-admin-info-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.rp-admin-info-box h3 {
+    margin: 0 0 15px 0;
+    color: #1e293b;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rp-admin-info-box p {
+    margin: 8px 0;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.rp-admin-info-box strong {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.rp-admin-info-box code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+}
+
+/* Статуси в адмінці */
+.rp-status-active {
+    color: #059669;
+    font-weight: 600;
+}
+
+.rp-status-inactive {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.rp-status-test {
+    color: #0ea5e9;
+    font-weight: 600;
+}
+
+.rp-status-production {
+    color: #059669;
+    font-weight: 600;
+}
+
+/* Покращені форми налаштувань */
+.form-table th {
+    width: 200px;
+    padding: 15px 10px 15px 0;
+    vertical-align: top;
+}
+
+.form-table td {
+    padding: 15px 0;
+}
+
+/* Роздільники секцій */
+.form-table tr[id*="_section"] th {
+    padding-top: 30px;
+    padding-bottom: 0;
+}
+
+.form-table tr[id*="_section"] th h3 {
+    margin: 0;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.form-table tr[id*="_section"] td {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.form-table tr[id*="_section"] td p {
+    margin: 8px 0 0 0;
+    color: #64748b;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Покращені поля введення */
+.form-table input[type="text"],
+.form-table input[type="password"],
+.form-table input[type="number"],
+.form-table textarea,
+.form-table select {
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-table input[type="text"]:focus,
+.form-table input[type="password"]:focus,
+.form-table input[type="number"]:focus,
+.form-table textarea:focus,
+.form-table select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    outline: none;
+}
+
+.form-table textarea {
+    min-height: 80px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Чекбокси */
+.form-table input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    accent-color: #3b82f6;
+}
+
+.form-table label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+}
+
+/* Опис полів */
+.form-table .description {
+    margin-top: 8px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Поля лише для читання */
+.form-table input[readonly] {
+    background: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+/* ================================================
+   ГАРНІ СПИСКИ БАНКІВ І ТЕРМІНІВ
+   ================================================ */
+
+/* Стиль для списку банків і термінів */
+.rp-banks-list,
+.rp-terms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.rp-bank-item,
+.rp-term-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.rp-bank-item::before,
+.rp-term-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(29, 78, 216, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.rp-bank-item:hover::before,
+.rp-term-item:hover::before {
+    opacity: 1;
+}
+
+.rp-bank-item:hover,
+.rp-term-item:hover {
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+.rp-bank-item code,
+.rp-term-item code {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #1e40af;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-right: 12px;
+    font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+    border: 1px solid #93c5fd;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.2s ease;
+}
+
+.rp-bank-item:hover code,
+.rp-term-item:hover code {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+.rp-bank-item span:not(code),
+.rp-term-item span:not(code) {
+    font-weight: 500;
+    color: #374151;
+    position: relative;
+    z-index: 2;
+}
+
+.rp-bank-item:hover span:not(code),
+.rp-term-item:hover span:not(code) {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Приклади використання */
+.rp-example {
+    margin: 15px 0 5px 0 !important;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #92400e;
+    border-left: 4px solid #f59e0b;
+}
+
+.rp-example strong {
+    color: #78350f;
+    font-weight: 700;
+}
+
+.rp-example code {
+    background: rgba(255, 255, 255, 0.7) !important;
+    color: #78350f !important;
+    border: 1px solid #f59e0b !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+}
+
+/* Список плейсхолдерів */
+.rp-placeholders-list {
+    margin: 12px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid #16a34a;
+    border-radius: 8px;
+    border-left: 4px solid #16a34a;
+}
+
+.rp-placeholder {
+    display: block;
+    margin: 6px 0;
+    font-size: 13px;
+    color: #166534;
+}
+
+.rp-placeholder code {
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #14532d !important;
+    border: 1px solid #16a34a !important;
+    padding: 2px 6px !important;
+    border-radius: 4px !important;
+    font-weight: 600 !important;
+    margin-right: 8px !important;
+}
+
+/* Кнопки */
+.button-primary.rp-admin-button {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: none;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+    transition: all 0.2s ease;
+}
+
+.button-primary.rp-admin-button:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.button-primary.rp-admin-button:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Сповіщення */
+.rp-admin-notice {
+    border-left-width: 4px;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin: 16px 0;
+}
+
+.rp-admin-notice.notice-info {
+    background: #eff6ff;
+    border-left-color: #3b82f6;
+    color: #1e40af;
+}
+
+.rp-admin-notice.notice-warning {
+    background: #fffbeb;
+    border-left-color: #f59e0b;
+    color: #92400e;
+}
+
+.rp-admin-notice.notice-error {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+    color: #dc2626;
+}
+
+.rp-admin-notice.notice-success {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+    color: #059669;
+}
+
+.rp-admin-notice p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Таблиці в адмінці */
+.rp-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rp-admin-table th,
+.rp-admin-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rp-admin-table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+}
+
+.rp-admin-table tr:hover {
+    background: #f9fafb;
+}
+
+/* Вкладки */
+.rp-admin-tabs {
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.rp-admin-tabs ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 4px;
+}
+
+.rp-admin-tabs li {
+    margin: 0;
+}
+
+.rp-admin-tabs a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s ease;
+}
+
+.rp-admin-tabs a:hover {
+    color: #374151;
+    background: #f3f4f6;
+}
+
+.rp-admin-tabs a.current {
+    color: #3b82f6;
+    background: white;
+    border-bottom: 2px solid #3b82f6;
+    margin-bottom: -2px;
+}
+
+/* Картки в адмінці */
+.rp-admin-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.rp-admin-card h3 {
+    margin: 0 0 16px 0;
+    color: #1f2937;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rp-admin-card p {
+    margin: 8px 0;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Бейджі статусу */
+.rp-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rp-status-badge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.rp-status-badge.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.rp-status-badge.test {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* Адаптивність для адмінки */
+@media (max-width: 768px) {
+    .rp-admin-info-box {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .form-table th {
+        width: auto;
+        display: block;
+        padding: 10px 0 5px 0;
+    }
+    
+    .form-table td {
+        display: block;
+        padding: 5px 0 15px 0;
+    }
+    
+    .form-table input[type="text"],
+    .form-table input[type="password"],
+    .form-table input[type="number"],
+    .form-table textarea,
+    .form-table select {
+        max-width: 100%;
+    }
+    
+    .rp-admin-tabs ul {
+        flex-direction: column;
+    }
+    
+    .rp-admin-tabs a {
+        border-radius: 6px;
+        margin-bottom: 4px;
+    }
+    
+    .rp-admin-tabs a.current {
+        border-bottom: none;
+        margin-bottom: 4px;
+        background: #3b82f6;
+        color: white;
+    }
+    
+    /* Мобільна адаптація списків */
+    .rp-banks-list,
+    .rp-terms-list {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 8px;
+    }
+    
+    .rp-bank-item,
+    .rp-term-item {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .rp-bank-item code,
+    .rp-term-item code {
+        padding: 3px 8px;
+        font-size: 11px;
+        margin-right: 8px;
+    }
+}
+
+/* Темна тема для адмінки */
+@media (prefers-color-scheme: dark) {
+    .rp-admin-info-box {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+    
+    .rp-admin-info-box h3,
+    .rp-admin-info-box strong {
+        color: #f1f5f9;
+    }
+    
+    .rp-admin-info-box p {
+        color: #cbd5e1;
+    }
+    
+    .rp-admin-info-box code {
+        background: #334155;
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+    
+    .rp-admin-card {
+        background: #1e293b;
+        border-color: #334155;
+        color: #f1f5f9;
+    }
+    
+    .rp-admin-card h3 {
+        color: #f1f5f9;
+    }
+    
+    .rp-admin-card p {
+        color: #cbd5e1;
+    }
+    
+    /* Темна тема для списків */
+    .rp-banks-list,
+    .rp-terms-list {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border-color: #475569;
+    }
+    
+    .rp-bank-item,
+    .rp-term-item {
+        background: #0f172a;
+        border-color: #334155;
+        color: #f1f5f9;
+    }
+    
+    .rp-bank-item:hover,
+    .rp-term-item:hover {
+        border-color: #60a5fa;
+        background: #1e293b;
+    }
+}
+
+/* Анімації */
+.rp-admin-info-box,
+.rp-admin-card,
+.rp-banks-list,
+.rp-terms-list {
+    animation: rp-adminFadeIn 0.4s ease-out;
+}
+
+@keyframes rp-adminFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анімація появи елементів списку */
+.rp-bank-item,
+.rp-term-item {
+    animation: rp-itemSlideIn 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+.rp-bank-item:nth-child(1) { animation-delay: 0.1s; }
+.rp-bank-item:nth-child(2) { animation-delay: 0.15s; }
+.rp-bank-item:nth-child(3) { animation-delay: 0.2s; }
+.rp-bank-item:nth-child(4) { animation-delay: 0.25s; }
+.rp-bank-item:nth-child(5) { animation-delay: 0.3s; }
+
+.rp-term-item:nth-child(1) { animation-delay: 0.1s; }
+.rp-term-item:nth-child(2) { animation-delay: 0.15s; }
+.rp-term-item:nth-child(3) { animation-delay: 0.2s; }
+.rp-term-item:nth-child(4) { animation-delay: 0.25s; }
+.rp-term-item:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes rp-itemSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Утиліти */
+.rp-text-center { text-align: center; }
+.rp-text-right { text-align: right; }
+.rp-mb-0 { margin-bottom: 0 !important; }
+.rp-mt-20 { margin-top: 20px; }
+.rp-hidden { display: none; }
+
+
+/* ================================================
+   ІНТЕРАКТИВНІ ЕЛЕМЕНТИ СПИСКІВ
+   ================================================ */
+
+/* Стилі для вибраних елементів */
+.rp-bank-item.rp-selected,
+.rp-term-item.rp-selected {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+    border-color: #3b82f6 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+}
+
+.rp-bank-item.rp-selected code,
+.rp-term-item.rp-selected code {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    color: white !important;
+    border-color: #1d4ed8 !important;
+}
+
+.rp-bank-item.rp-selected::after,
+.rp-term-item.rp-selected::after {
+    content: '✓';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #3b82f6;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Покращений зворотний зв'язок */
+.rp-field-feedback {
+    margin-top: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    animation: rpFeedbackSlideIn 0.3s ease-out;
+    border-left: 4px solid;
+}
+
+.rp-field-feedback.error {
+    background: #fef2f2;
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+.rp-field-feedback.success {
+    background: #f0fdf4;
+    border-color: #16a34a;
+    color: #16a34a;
+}
+
+@keyframes rpFeedbackSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стилі для кнопки копіювання */
+.rp-copy-btn {
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+.rp-copy-btn:hover {
+    background: #f0f9ff !important;
+    border-color: #3b82f6 !important;
+    color: #1e40af !important;
+}
+
+.rp-copy-btn.rp-copied {
+    background: #dcfce7 !important;
+    border-color: #16a34a !important;
+    color: #15803d !important;
+}

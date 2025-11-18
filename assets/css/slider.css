@@ -1,0 +1,427 @@
+/* Стилі слайдера RozetkaPay Payparts */
+
+.rp-payparts-slider-container {
+    background: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+/* Селектор банків */
+.rp-bank-selector {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+
+.rp-bank-selector h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.rp-bank-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.rp-bank-option {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.rp-bank-option input[type="radio"] {
+    display: none;
+}
+
+.rp-bank-card {
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+    position: relative;
+    overflow: hidden;
+}
+
+.rp-bank-card:hover {
+    border-color: #007cba;
+    background: #f8fbff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 124, 186, 0.1);
+}
+
+.rp-bank-option.active .rp-bank-card {
+    border-color: #007cba;
+    background: #f0f8ff;
+    box-shadow: 0 4px 16px rgba(0, 124, 186, 0.15);
+}
+
+.rp-bank-option.active .rp-bank-card::before {
+    content: '✓';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+    background: #007cba;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rp-bank-logo {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.rp-bank-logo img {
+    max-width: 32px;
+    max-height: 32px;
+    border-radius: 4px;
+}
+
+.rp-bank-fallback {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007cba, #005a87);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.rp-bank-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.rp-bank-terms {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.3;
+}
+
+/* Секція слайдера */
+.rp-slider-section {
+    position: relative;
+}
+
+.rp-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rp-slider-title {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.rp-slider-value {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: #007cba;
+    background: #f0f8ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #b3d9ff;
+}
+
+.rp-slider-months {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.rp-slider-payment {
+    font-size: 16px;
+    font-weight: 700;
+    color: #28a745;
+}
+
+/* Слайдер */
+.rp-payparts-slider-wrapper {
+    position: relative;
+    margin: 20px 0;
+}
+
+.rp-payparts-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, #e1e5e9 0%, #e1e5e9 100%);
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.rp-payparts-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007cba, #005a87);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 3px 12px rgba(0, 124, 186, 0.4);
+    transition: all 0.3s ease;
+}
+
+.rp-payparts-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(0, 124, 186, 0.6);
+}
+
+.rp-payparts-slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007cba, #005a87);
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 0 3px 12px rgba(0, 124, 186, 0.4);
+    transition: all 0.3s ease;
+}
+
+.rp-payparts-slider::-webkit-slider-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e1e5e9;
+}
+
+.rp-payparts-slider::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e1e5e9;
+    border: none;
+}
+
+/* Шкала слайдера */
+.rp-slider-track {
+    position: relative;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.rp-slider-mark {
+    position: absolute;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rp-slider-mark:hover:not(.disabled) {
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.rp-slider-mark-line {
+    width: 3px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.rp-slider-mark.disabled .rp-slider-mark-line {
+    background: #f0f0f0;
+}
+
+.rp-slider-mark-label {
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 2px 6px;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.rp-slider-mark-label.active {
+    color: #007cba;
+    font-weight: 700;
+    background: #f0f8ff;
+    border: 1px solid #b3d9ff;
+}
+
+.rp-slider-mark-label.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.rp-slider-mark:hover:not(.disabled) .rp-slider-mark-label:not(.disabled) {
+    color: #007cba;
+    background: #f8fbff;
+}
+
+/* Інформація про поточний банк */
+.rp-current-bank-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.rp-current-bank-info .rp-bank-logo {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+.rp-current-bank-name {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.rp-bank-features {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.rp-bank-feature {
+    font-size: 11px;
+    padding: 3px 10px;
+    background: #e9ecef;
+    border-radius: 15px;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.rp-bank-feature.available {
+    background: linear-gradient(135deg, #d1e7dd, #c3e6cb);
+    color: #0a3622;
+    font-weight: 600;
+}
+
+.rp-bank-feature.unavailable {
+    background: linear-gradient(135deg, #f8d7da, #f1aeb5);
+    color: #721c24;
+    font-weight: 600;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .rp-bank-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .rp-slider-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .rp-slider-value {
+        align-self: stretch;
+        justify-content: center;
+    }
+    
+    .rp-current-bank-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .rp-bank-features {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .rp-payparts-slider-container {
+        padding: 15px;
+    }
+    
+    .rp-slider-track {
+        margin-top: 20px;
+    }
+    
+    .rp-slider-mark-label {
+        font-size: 11px;
+        margin-top: 8px;
+    }
+}
+
+/* Анімації */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rp-payparts-slider-container {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Стани завантаження */
+.rp-payparts-slider-container.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.rp-payparts-slider-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007cba;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
