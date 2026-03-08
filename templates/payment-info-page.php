@@ -9,7 +9,11 @@
  * @var string $json_data
  */
 
-	$back_url = admin_url( 'admin.php?page=wc-orders&action=edit&id=' . $order_id );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+$back_url = admin_url( 'admin.php?page=wc-orders&action=edit&id=' . $order_id );
 
 ?>
 <div class="wrap">
