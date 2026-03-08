@@ -22,7 +22,7 @@ class RozetkaPay_Order_Payment_Action {
 			function () {
 				add_submenu_page(
 					null,
-					__( 'RozetkaPay payment receipt', 'buy-rozetkapay-woocommerce' ),
+					__( 'RozetkaPay payment receipt', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					null,
 					'manage_woocommerce',
 					'rozetkapay-payment-receipt',
@@ -36,7 +36,7 @@ class RozetkaPay_Order_Payment_Action {
 			function () {
 				add_submenu_page(
 					null,
-					__( 'RozetkaPay resend payment callback', 'buy-rozetkapay-woocommerce' ),
+					__( 'RozetkaPay resend payment callback', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					null,
 					'manage_woocommerce',
 					'rozetkapay-resend-payment-callback',
@@ -50,7 +50,7 @@ class RozetkaPay_Order_Payment_Action {
 			function () {
 				add_submenu_page(
 					null,
-					__( 'RozetkaPay cancel payment', 'buy-rozetkapay-woocommerce' ),
+					__( 'RozetkaPay cancel payment', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					null,
 					'manage_woocommerce',
 					'rozetkapay-cancel-payment',
@@ -147,11 +147,11 @@ class RozetkaPay_Order_Payment_Action {
 			}
 		} elseif ( 'yes' === $_GET['sent'] ) {
 				echo '<div class="updated"><p>'
-					. esc_html__( 'Payment callback was successfully resent', 'buy-rozetkapay-woocommerce' )
+					. esc_html__( 'Payment callback was successfully resent', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 					. '</p></div>';
 		} else {
 			echo '<div class="error"><p>'
-				. esc_html__( 'Something went wrong', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Something went wrong', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. '</p></div>';
 		}
 
@@ -184,7 +184,7 @@ class RozetkaPay_Order_Payment_Action {
 		?>
 		<p>
 			<a href="<?php echo esc_url( $back_url ); ?>" class="page-title-action">
-				<?php echo esc_html__( 'Back to order view', 'buy-rozetkapay-woocommerce' ); ?>
+				<?php echo esc_html__( 'Back to order view', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>
 			</a>
 		</p>
 		<?php

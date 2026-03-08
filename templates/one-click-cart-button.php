@@ -30,11 +30,11 @@ if ( 'white' === $view_mode ) {
 			class="button alt wp-element-button btn-rozetka <?php echo esc_html( $css_class ); ?> view-variant_2"
 			onclick="return rozetkapay_one_click(this);"
 		>
-			<span><?php esc_html_e( 'Купити з', 'buy-rozetkapay-woocommerce' ); ?></span>
+			<span><?php esc_html_e( 'Купити з', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?></span>
 			<img
 				src="<?php echo esc_url( ROZETKAPAY_GATEWAY_PLUGIN_URL ); ?>assets/img/rozetka_ec_logo_variant_2_<?php echo esc_html( $img_color ); ?>.svg"
 				class="img-responsive"
-				alt="<?php esc_html_e( 'Buy via RozetkaPay', 'buy-rozetkapay-woocommerce' ); ?>"
+				alt="<?php esc_html_e( 'Buy via RozetkaPay', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>"
 			>
 		</button>
 	</div>

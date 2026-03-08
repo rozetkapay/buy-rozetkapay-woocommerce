@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( $show_payment_info ) {
 	?>
 		<a href="<?php echo esc_url( $payment_info_url ); ?>" class="button button-primary" style="margin-top: 8px;">
-		<?php esc_html_e( 'Payment info', 'buy-rozetkapay-woocommerce' ); ?>
+		<?php esc_html_e( 'Payment info', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>
 		</a>
 		<br />
 		<?php
@@ -31,7 +31,7 @@ if ( $show_payment_info ) {
 if ( $show_receipt ) {
 	?>
 		<a href="<?php echo esc_url( $payment_receipt_url ); ?>" target="_blank" class="button button-primary" style="margin-top: 8px;">
-		<?php esc_html_e( 'Payment receipt', 'buy-rozetkapay-woocommerce' ); ?>
+		<?php esc_html_e( 'Payment receipt', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>
 		</a>
 		<br />
 		<?php
@@ -40,7 +40,7 @@ if ( $show_receipt ) {
 if ( $show_resend_payment_callback ) {
 	?>
 		<a href="<?php echo esc_url( $resend_payment_callback_url ); ?>" class="button button-primary" style="margin-top: 8px;">
-		<?php esc_html_e( 'Resend payment callback', 'buy-rozetkapay-woocommerce' ); ?>
+		<?php esc_html_e( 'Resend payment callback', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>
 		</a>
 		<br />
 		<?php
@@ -49,7 +49,7 @@ if ( $show_resend_payment_callback ) {
 if ( $show_cancel_payment ) {
 	?>
 		<a href="<?php echo esc_url( $cancel_payment_url ); ?>" class="button button-primary" style="margin-top: 8px;">
-		<?php esc_html_e( 'Cancel payment', 'buy-rozetkapay-woocommerce' ); ?>
+		<?php esc_html_e( 'Cancel payment', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>
 		</a>
 		<br />
 		<?php

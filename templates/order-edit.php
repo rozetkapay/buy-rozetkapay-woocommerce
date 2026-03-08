@@ -25,7 +25,7 @@ if ( $order ) {
 					const html = order_meta.html();
 					const modified_content = html.replace(
 						/RozetkaPay\./,
-						'RozetkaPay (<?php esc_html_e( 'Payment upon receipt', 'buy-rozetkapay-woocommerce' ); ?>).'
+						'RozetkaPay (<?php esc_html_e( 'Payment upon receipt', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>).'
 					);
 
 					order_meta.html(modified_content);

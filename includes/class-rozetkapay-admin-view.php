@@ -34,7 +34,7 @@ class RozetkaPay_Admin_View {
 					function () {
 						add_meta_box(
 							'rozetkapay-order-metabox',
-							__( 'RozetkaPay order', 'buy-rozetkapay-woocommerce' ),
+							__( 'RozetkaPay order', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 							array( __CLASS__, 'view_order_metabox' ),
 							wc_get_page_screen_id( 'shop-order' ),
 							'side',
@@ -61,7 +61,7 @@ class RozetkaPay_Admin_View {
 			function () {
 				add_submenu_page(
 					null,
-					__( 'RozetkaPay payment information', 'buy-rozetkapay-woocommerce' ),
+					__( 'RozetkaPay payment information', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					null,
 					'edit_shop_orders',
 					'rozetkapay-payment-info',
@@ -83,7 +83,7 @@ class RozetkaPay_Admin_View {
 
 		if ( ! empty( $patronym ) ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Patronym', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Patronym', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. ':</strong> '
 				. esc_html( $patronym )
 				. '</p></div>';
@@ -93,7 +93,7 @@ class RozetkaPay_Admin_View {
 
 		if ( ! empty( $transaction_id ) ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Transaction ID', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Transaction ID', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. ':</strong> '
 				. esc_html( $transaction_id )
 				. '</p></div>';
@@ -104,7 +104,7 @@ class RozetkaPay_Admin_View {
 
 		if ( 'post_payment' === $payment_operation_type ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Payment upon receipt', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Payment upon receipt', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. '</strong></p></div>';
 		}
 	}
@@ -119,7 +119,7 @@ class RozetkaPay_Admin_View {
 
 		if ( ! empty( $patronym ) ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Patronym', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Patronym', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. ':</strong> '
 				. esc_html( $patronym )
 				. '</p></div>';
@@ -129,7 +129,7 @@ class RozetkaPay_Admin_View {
 
 		if ( ! empty( $delivery_type ) ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Delivery type', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Delivery type', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. ':</strong> '
 				. esc_html( self::map_delivery_type( $delivery_type ) )
 				. '</p></div>';
@@ -139,7 +139,7 @@ class RozetkaPay_Admin_View {
 
 		if ( ! empty( $provider ) ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Provider', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Provider', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. ':</strong> '
 				. esc_html( $provider )
 				. '</p></div>';
@@ -153,7 +153,7 @@ class RozetkaPay_Admin_View {
 
 		if ( ! empty( $warehouse_number ) ) {
 			echo '<div class="address"><p><strong>'
-				. esc_html__( 'Warehouse number', 'buy-rozetkapay-woocommerce' )
+				. esc_html__( 'Warehouse number', 'buy-with-rozetkapay-gateway-for-woocommerce' )
 				. ':</strong> '
 				. esc_html( $warehouse_number )
 				. '</p></div>';
@@ -275,8 +275,8 @@ class RozetkaPay_Admin_View {
 				$main_slug = 'rozetkapay-payment-logs';
 
 				add_menu_page(
-					__( 'RozetkaPay Logs', 'buy-rozetkapay-woocommerce' ),
-					__( 'RozetkaPay Logs', 'buy-rozetkapay-woocommerce' ),
+					__( 'RozetkaPay Logs', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
+					__( 'RozetkaPay Logs', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					'manage_woocommerce',
 					$main_slug,
 					null,
@@ -288,8 +288,8 @@ class RozetkaPay_Admin_View {
 
 				add_submenu_page(
 					$main_slug,
-					__( 'Requests', 'buy-rozetkapay-woocommerce' ),
-					__( 'Requests', 'buy-rozetkapay-woocommerce' ),
+					__( 'Requests', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
+					__( 'Requests', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					'manage_woocommerce',
 					$main_slug,
 					array( __CLASS__, 'view_payment_request_logs_page' ),
@@ -297,8 +297,8 @@ class RozetkaPay_Admin_View {
 
 				add_submenu_page(
 					$main_slug,
-					__( 'Callbacks', 'buy-rozetkapay-woocommerce' ),
-					__( 'Callbacks', 'buy-rozetkapay-woocommerce' ),
+					__( 'Callbacks', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
+					__( 'Callbacks', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					'manage_woocommerce',
 					'rozetkapay-payment-callback-logs',
 					array( __CLASS__, 'view_payment_callback_logs_page' ),
@@ -306,8 +306,8 @@ class RozetkaPay_Admin_View {
 
 				add_submenu_page(
 					$main_slug,
-					__( 'Errors', 'buy-rozetkapay-woocommerce' ),
-					__( 'Errors', 'buy-rozetkapay-woocommerce' ),
+					__( 'Errors', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
+					__( 'Errors', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					'manage_woocommerce',
 					'rozetkapay-payment-error-logs',
 					array( __CLASS__, 'view_payment_error_logs_page' ),
@@ -324,11 +324,11 @@ class RozetkaPay_Admin_View {
 	private static function map_delivery_type( string $delivery_type ): string {
 		switch ( strtoupper( $delivery_type ) ) {
 			case 'W':
-				return __( 'Department', 'buy-rozetkapay-woocommerce' );
+				return __( 'Department', 'buy-with-rozetkapay-gateway-for-woocommerce' );
 			case 'P':
-				return __( 'Paketautomat', 'buy-rozetkapay-woocommerce' );
+				return __( 'Paketautomat', 'buy-with-rozetkapay-gateway-for-woocommerce' );
 			case 'D':
-				return __( 'Courier', 'buy-rozetkapay-woocommerce' );
+				return __( 'Courier', 'buy-with-rozetkapay-gateway-for-woocommerce' );
 			default:
 				return '-';
 		}
