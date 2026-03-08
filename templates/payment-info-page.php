@@ -14,11 +14,11 @@
 ?>
 <div class="wrap">
 	<h1 class="wp-heading-inline">
-		<?php esc_html_e( 'RozetkaPay payment information for the external order ID', 'buy-rozetkapay-woocommerce' ); ?>:
+		<?php esc_html_e( 'RozetkaPay payment information for the external order ID', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?>:
 		<?php echo esc_html( $order_id ); ?>
 	</h1>
 	<hr class="wp-header-end" style="margin: 4px 0;" />
-	<a href="<?php echo esc_url( $back_url ); ?>" class="page-title-action"><?php esc_html_e( 'Back to order view', 'buy-rozetkapay-woocommerce' ); ?></a>
+	<a href="<?php echo esc_url( $back_url ); ?>" class="page-title-action"><?php esc_html_e( 'Back to order view', 'buy-with-rozetkapay-gateway-for-woocommerce' ); ?></a>
 	<hr class="wp-header-end" style="margin: 4px 0;" />
 	<?php
 

@@ -87,7 +87,7 @@ final class RozetkaPay_Init {
 			function () {
                 // phpcs:ignore
 				load_plugin_textdomain(
-					'buy-rozetkapay-woocommerce',
+					'buy-with-rozetkapay-gateway-for-woocommerce',
 					false,
 					dirname( plugin_basename( __FILE__ ) ) . '/../languages',
 				);
@@ -107,26 +107,26 @@ final class RozetkaPay_Init {
 				register_post_status(
 					$status_prefix . RozetkaPay_Const::ORDER_STATUS_CREATED,
 					array(
-						'label'                     => __( 'RPay created', 'buy-rozetkapay-woocommerce' ),
+						'label'                     => __( 'RPay created', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 						'public'                    => false,
 						'exclude_from_search'       => true,
 						'show_in_admin_all_list'    => false,
 						'show_in_admin_status_list' => true,
 						// translators: %s: Number of posts in this status.
-						'label_count'               => __( 'RPay created (%s)', 'buy-rozetkapay-woocommerce' ),
+						'label_count'               => __( 'RPay created (%s)', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					)
 				);
 
 				register_post_status(
 					$status_prefix . RozetkaPay_Const::ORDER_STATUS_POST_PAYMENT,
 					array(
-						'label'                     => __( 'RPay post payment', 'buy-rozetkapay-woocommerce' ),
+						'label'                     => __( 'RPay post payment', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 						'public'                    => false,
 						'exclude_from_search'       => false,
 						'show_in_admin_all_list'    => true,
 						'show_in_admin_status_list' => true,
 						// translators: %s: Number of posts in this status.
-						'label_count'               => __( 'RPay post payment (%s)', 'buy-rozetkapay-woocommerce' ),
+						'label_count'               => __( 'RPay post payment (%s)', 'buy-with-rozetkapay-gateway-for-woocommerce' ),
 					)
 				);
 			}
@@ -136,10 +136,10 @@ final class RozetkaPay_Init {
 			'wc_order_statuses',
 			function ( $order_statuses ) use ( $status_prefix ) {
 				$order_statuses[ $status_prefix . RozetkaPay_Const::ORDER_STATUS_CREATED ]
-					= __( 'RPay created', 'buy-rozetkapay-woocommerce' );
+					= __( 'RPay created', 'buy-with-rozetkapay-gateway-for-woocommerce' );
 
 				$order_statuses[ $status_prefix . RozetkaPay_Const::ORDER_STATUS_POST_PAYMENT ]
-					= __( 'RPay post payment', 'buy-rozetkapay-woocommerce' );
+					= __( 'RPay post payment', 'buy-with-rozetkapay-gateway-for-woocommerce' );
 
 				return $order_statuses;
 			}
