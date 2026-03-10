@@ -2,7 +2,7 @@
 Contributors: rozetkapay
 Tags: woocommerce, payment gateway, rozetkapay, checkout, ecommerce, one-click
 Requires at least: 6.2
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.3
 WC requires at least: 8.0
 WC tested up to: 9.8
