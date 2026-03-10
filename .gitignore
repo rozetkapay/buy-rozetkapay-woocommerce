@@ -50,3 +50,4 @@ wp-config.php
 .htaccess
 node_modules/
 vendor/
+.phpactor.json
