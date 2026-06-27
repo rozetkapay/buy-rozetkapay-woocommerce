@@ -3,7 +3,7 @@
  * Plugin Name: Buy with RozetkaPay Gateway for WooCommerce
  * Plugin URI:
  * Description: WooCommerce Payment Gateway for Buy with RozetkaPay
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: RozetkaPay
  * License: GPL2
  * Text Domain: buy-rozetkapay-woocommerce
