@@ -36,7 +36,13 @@ class RozetkaPay_Callback {
 		$api_password         = RozetkaPay_Helper::get_payment_gateway()->get_option( 'password' );
 		$original_signature   =
 			RozetkaPay_Helper::get_request_header_value( RozetkaPay_Const::HEADER_SIGNATURE ) ?? '';
-		$calculated_signature = self::calculate_signature( $data, $api_password );
+		// The payments service signing format is not guaranteed, so accept
+		// either standard base64 or url-safe base64.
+		$calculated_signatures = array(
+			self::calculate_signature( $data, $api_password, false ),
+			self::calculate_signature( $data, $api_password, true ),
+		);
+		$calculated_signature  = $calculated_signatures[0];
 
 		// Log the callback data.
 		RozetkaPay_Logger::log(
@@ -60,14 +66,8 @@ class RozetkaPay_Callback {
 
 		$data_structure_type = self::detect_data_structure_type( $parsed_data );
 
-		// todo: temporary fix because there are some problems with calculation signature on the API side.
-		if ( 'refund' === $data_structure_type && ! empty( $original_signature ) ) {
-			$calculated_signature = 'skipped';
-			$original_signature   = $calculated_signature;
-		}
-
 		self::verify_signature(
-			$calculated_signature,
+			$calculated_signatures,
 			$original_signature,
 			$data,
 			$parsed_data,
@@ -202,18 +202,30 @@ class RozetkaPay_Callback {
 	/**
 	 * Verify calculated signature with original signature and log during error.
 	 *
-	 * @param string      $calculated_signature Calculated signature.
-	 * @param string      $original_signature   Original signature.
-	 * @param string|null $data                 Request body data.
-	 * @param array|null  $parsed_data          Parsed request body data.
+	 * @param string[]    $calculated_signatures Candidate calculated signatures.
+	 * @param string      $original_signature    Original signature.
+	 * @param string|null $data                  Request body data.
+	 * @param array|null  $parsed_data           Parsed request body data.
 	 */
 	private static function verify_signature(
-		string $calculated_signature,
+		array $calculated_signatures,
 		string $original_signature,
 		?string $data,
 		?array $parsed_data
 	): void {
-		if ( $calculated_signature !== $original_signature ) {
+		// Normalize both sides: drop optional prefixes and base64 padding, then
+		// accept the callback if any candidate encoding matches.
+		$normalized_original = self::normalize_signature( $original_signature );
+		$matched             = false;
+
+		foreach ( $calculated_signatures as $calculated_signature ) {
+			if ( hash_equals( self::normalize_signature( $calculated_signature ), $normalized_original ) ) {
+				$matched = true;
+				break;
+			}
+		}
+
+		if ( ! $matched ) {
 			$message = 'Wrong signature';
 
 			RozetkaPay_Logger::log(
@@ -221,7 +233,7 @@ class RozetkaPay_Callback {
 				array(
 					'message'              => $message,
 					'original_signature'   => $original_signature,
-					'calculated_signature' => $calculated_signature,
+					'calculated_signature' => $calculated_signatures,
 				),
 				array(
 					'data_raw'    => $data,
@@ -232,6 +244,20 @@ class RozetkaPay_Callback {
 			status_header( 406 );
 			exit( esc_html( $message ) );
 		}
+	}
+
+	/**
+	 * Normalize a signature for comparison.
+	 *
+	 * Strips optional algorithm prefixes (e.g. "sha1=", "signature=") and
+	 * trailing base64 padding so safe (base64url) and standard forms match.
+	 *
+	 * @param string $signature Signature value.
+	 */
+	private static function normalize_signature( string $signature ): string {
+		$signature = str_ireplace( array( 'sha1=', 'signature=' ), '', trim( $signature ) );
+
+		return rtrim( $signature, '=' );
 	}
 
 	/**
